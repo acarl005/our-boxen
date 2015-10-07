@@ -106,7 +106,13 @@ sublime_text_2::package { 'Emmet':
 include mongodb
 include chrome
 include iterm2::stable
+include atom
 
+# install the linter package
+atom::package { 'linter': }
+
+# install the monokai theme
+atom::theme { 'monokai': }
 
 
 
