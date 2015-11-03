@@ -70,7 +70,7 @@ node default {
 
   # ensure a npm module is installed for a certain node version
   # note, you can't have duplicate resource names so you have to name like so
-  npm_module { "bower for ${version}":
+  npm_module { "bower for 4.2.1":
     module       => 'bower',
     version      => '~> 1.4.1',
     node_version => "4.2.1",
@@ -92,8 +92,8 @@ node default {
 
 
   # node versions
-  nodejs::version { '0.12': }
-  nodejs::version { '4.2.1': }
+  # nodejs::version { '0.12': }
+  # nodejs::version { '4.2.1': }
 
   # default ruby versions
   ruby::version { '1.9.3': }
