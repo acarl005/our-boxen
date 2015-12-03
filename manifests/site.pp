@@ -122,7 +122,6 @@ node default {
     source => 'sergeche/emmet-sublime'
   }
 
-  include mongodb
   include chrome
   include iterm2::stable
   include atom
