@@ -51,10 +51,7 @@ Service {
 
 Homebrew::Formula <| |> -> Package <| |>
 
-# Set the global default node (auto-installs it if it can)
-class { 'nodejs::global':
-  version => '4.2.1'
-}
+
 
 node default {
   # core modules, needed for most things
@@ -68,32 +65,6 @@ node default {
     fail('Please enable full disk encryption and try again')
   }
 
-  # ensure a npm module is installed for a certain node version
-  # note, you can't have duplicate resource names so you have to name like so
-  npm_module { "bower for 4.2.1":
-    module       => 'bower',
-    version      => '~> 1.4.1',
-    node_version => "4.2.1",
-  }
-
-  # ensure a module is installed for all node versions
-  npm_module { 'bower for all nodes':
-    module       => 'bower',
-    version      => '~> 1.4.1',
-    node_version => '*',
-  }
-
-
-  # Installing nodenv plugin
-  nodejs::nodenv::plugin { 'nodenv-vars':
-    ensure => 'ee42cd9db3f3fca2a77862ae05a410947c33ba09',
-    source  => 'OiNutter/nodenv-vars'
-  }
-
-
-  # node versions
-  # nodejs::version { '0.12': }
-  # nodejs::version { '4.2.1': }
 
   # default ruby versions
   ruby::version { '1.9.3': }
