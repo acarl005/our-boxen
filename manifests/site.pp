@@ -98,10 +98,10 @@ node default {
   include atom
 
   # install the linter package
-  atom::package { 'linter': }
+  # atom::package { 'linter': }
 
   # install the monokai theme
-  atom::theme { 'monokai': }
+  # atom::theme { 'monokai': }
 
 }
 
